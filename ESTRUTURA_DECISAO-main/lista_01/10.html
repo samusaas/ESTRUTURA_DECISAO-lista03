@@ -18,20 +18,21 @@
     const trabalhou = Number(prompt(`Trabalhou com a vítima? (0-Não | 1-Sim)`));
 
     //PROCESSAMENTO
-    const pontos = telefonou + localDoCrime + moraPerto + devia + trabalhou;
+  let mensagem;
+   const pontos = telefonou + localDoCrime + moraPerto + devia + trabalhou;
     if (pontos == 2) {
-        alert(`Suspeito(a)!`);
+    mensagem = "Suspeito!";
     }
     else if (pontos == 3 || pontos == 4) {
-        alert(`Cúmplice!`);
+        mensagem = "Cúmplice!";
     }
     else if (pontos == 5) {
-        alert(`Assassino(a)!`);
+       mensagem = "Assassino!";
     }
     else {
-        alert(`Inocente!`);
+        mensagem = "Inocente!";
     }
-    
     //SAÍDA
+    document.write(`${mensagem}`);
 
 </script>
