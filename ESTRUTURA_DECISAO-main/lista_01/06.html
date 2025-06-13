@@ -14,7 +14,50 @@
     let num = Number(prompt(`informe um número inteiro menor que 1000`));
 
     //PROCESSAMENTO
- 
+    if (num < 1000 && num > 0) {
+   let centenas = Math.floor(num / 100);
+   let dezenas = Math.floor((num % 100) / 10);
+   let unidades = num % 10;
+   let numDiferentes = 0;
+   if (centenas > 0) numDiferentes++;
+   if (dezenas > 0) numDiferentes++;
+   if (unidades > 0) numDiferentes++;
+   let mensagem = `O número ${num} possui `;
+   if (centenas > 1) {
+          numDiferentes--;
+          mensagem = mensagem + `${centenas} Centenas`;
+          if (numDiferentes >= 2) mensagem = mensagem + `, `;
+          else if (numDiferentes == 1) mensagem = mensagem + ` e `;
+      }
+      else if (centenas == 1) {
+          numDiferentes--;
+          mensagem = mensagem + `${centenas} Centena`;
+          if (numDiferentes >= 2) mensagem = mensagem + `, `;
+          else if (numDiferentes == 1) mensagem = mensagem + ` e `;
+        }
+        if (dezenas > 1) {
+          numDiferentes--;
+          mensagem = mensagem+ `${dezenas} Dezenas`;
+          if (numDiferentes >= 2) mensagem = mensagem + `, `;
+          else if (numDiferentes == 1) mensagem = mensagem + ` e `;
+      }
+      else if (dezenas == 1) {
+          numDiferentes--;
+          mensagem = mensagem + `${dezenas} Dezena`;
+          if (numDiferentes >= 2) mensagem= mensagem + `, `;
+          else if (numDiferentes == 1) mensagem = mensagem + ` e `;
+      }
+      if (unidades > 1) {
+          mensagem = mensagem + `${unidades} Unidades`;
+      }
+      else if (unidades == 1) {
+          mensagem = mensagem + `${unidades} Unidade`;
+      }
+      document.write(mensagem);
+  }
+  else {
+      alert(`Número inválido! Informe um número inteiro menor que 1000.`);
+  }
 
 //SAÍDA
 
